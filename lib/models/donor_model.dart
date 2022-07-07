@@ -1,4 +1,4 @@
-class Donor {
+class Donor{
   String name;
   String mobile;
   String address;

@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:local_db/pages/home_page.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:local_db/pages/home_page.dart';
+import 'package:local_db/provider/donor_list_provider.dart';
+import 'package:provider/provider.dart';
 
-void main() async{
+void main() async {
   await Hive.initFlutter('hive_boxes');
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => DonorListProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
+  // const MyApp(),);
 }
 
 class MyApp extends StatelessWidget {

@@ -96,11 +96,11 @@ class _CustomDialogState extends State<CustomDialog> {
           child: Column(
             children: [
               SizedBox(height: widget.height * 0.01),
-              const CircleAvatar(
+              CircleAvatar(
                 radius: 40,
                 child: Text(
-                  'AB+',
-                  style: TextStyle(
+                  widget._donor.bloodGroup,
+                  style: const TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
